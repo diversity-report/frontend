@@ -2,7 +2,7 @@
   "name": "diversity-report",
   "version": "0.1.0",
   "description": "app to help people find out about how diverse the companies are",
-  "main": "app.js",
+  "main": "cli-server.js",
   "scripts": {
     "postinstall": "webpack --config ./webpack.config.js --progress --colors",
     "start": "node cli-server.js",
