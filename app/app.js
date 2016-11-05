@@ -12,6 +12,9 @@ app.config(['$routeProvider', ($routeProvider) => {
   .when('/', {
     template: require('./html/index.html')
   })
+  .when('/contribute', {
+    template: require('./templates/contribute.html')
+  })
   .otherwise({
     redirectTo: '/'
   });
