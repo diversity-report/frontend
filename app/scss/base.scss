@@ -1,0 +1,11 @@
+@import "vendor/normalize.css";
+@import "_theme.scss";
+
+body {
+  background-color: $app-white;
+  color: $app-letterBlack;
+}
+
+a {
+  text-decoration: none;
+}
