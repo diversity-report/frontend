@@ -11,7 +11,7 @@ const apiUrl = process.env.API_URL || 'http://localhost:3000';
 var plugins = [
   new ExtractText('bundle.css'),
   new webpack.DefinePlugin({
-    __API_URL__: JSON.stringify(apiURL),
+    __API_URL__: JSON.stringify(apiUrl),
     __DEBUG__: JSON.stringify(!production)
   })
 ];
@@ -29,33 +29,42 @@ if (production){
 }
 
 module.exports = {
-  entry: './app/app.js',
+  entry: `${__dirname}/app/app.js`,
+  debug: !production,
+  devtool: production ? false : 'eval',
+  plugins: plugins,
   output: {
     path: 'build',
     filename: 'bundle.js'
+  },
+  sassLoader: {
+    includePaths: [`${__dirname}/app/scss/lib`]
+  },
+  postcss: function(){
+    return [autoprefixer];
   },
   module: {
     loaders: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        loader: 'babel',
         query: {
           presets: ['es2015']
         }
       },
       {
-        test: /\scss$/,
-        loader: 'style!css!sass!'
+        test: /\.scss$/,
+        loader: ExtractText.extract('style', 'css!postcss!sass!')
       },
       {
-         test: /\.html$/,
-         loader: 'html'
+        test: /\.html$/,
+        loader: 'html'
       },
       {
         test: /\.(jpg|gif|png|jpeg)$/,
         loader: 'file?name=img/[hash].[ext]'
-      },
+      }
     ]
   }
 };
