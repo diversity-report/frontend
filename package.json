@@ -5,8 +5,7 @@
   "main": "cli-server.js",
   "scripts": {
     "postinstall": "webpack --config ./webpack.config.js --progress --colors",
-    "start": "node cli-server.js",
-    "dev": "webpack-dev-server --hot --inline"
+    "start": "node cli-server.js"
   },
   "repository": {
     "type": "git",
