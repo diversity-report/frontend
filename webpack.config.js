@@ -55,7 +55,7 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loader: ExtractText.extract('style', 'css!postcss!sass!')
+        loader: ExtractText.extract('style', 'css!sass!')
       },
       {
         test: /\.html$/,
