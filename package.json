@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/diversity-report/frontend#readme",
   "dependencies": {
-    "angular": "^1.5.8"
+    "angular": "^1.5.8",
+    "chart.js": "^2.3.0"
   },
   "devDependencies": {
     "babel-core": "^6.18.2",
