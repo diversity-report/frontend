@@ -1,0 +1,56 @@
+<section class="container">
+  <h1>Demographics Form</h1>
+  <p>Please input your company's demographic information.</p>
+  <form class="form" ng-submit="" ng-model="">
+    <fieldset>
+      <legend>Company Information</legend>
+      <label for="companyName"> Company Name: </label>
+      <input required type="text" ng-model=""></input>
+      <label for="city"> City: </label>
+      <input required type="text" ng-model=""></input>
+      <label for="state"> State: </label>
+      <input required type="text" ng-model=""></input>
+    </fieldset>
+    <fieldset>
+      <legend>Race</legend>
+      <label for="white"> White/Caucasian: </label>
+      <input required type="number" ng-mod`el=""></input>
+      <label for="hawaiian"> Native Hawaiian/Pacific Islander: </label>
+      <input required type="number" ng-model=""></input>
+      <label for="nativeAmerican"> Native American/Alaska Native: </label>
+      <input required type="number" ng-model=""></input>
+      <label for="asian"> Asian/Pacific Islander: </label>
+      <input required type="number" ng-model=""></input>
+      <label for="arab"> Arab/Middle Eastern: </label>
+      <input required type="number" ng-model=""></input>
+      <label for="latino"> Latino/Hispanic: </label>
+      <input required type="number" ng-model=""></input>
+      <label for="black"> Black/African American: </label>
+      <input required type="number" ng-model=""></input>
+      <label for="not-reported"> Not Reported: </label>
+      <input required type="number" ng-model=""></input>
+    </fieldset>
+    <fieldset>
+      <legend>Gender Identity</legend>
+      <label for="female"> Female: </label>
+      <input required type="number" ng-model=""></input>
+      <label for="male"> Male: </label>
+      <input required type="number" ng-model=""></input>
+      <label for="non-binary"> Non-Binary: </label>
+      <input required type="number" ng-model=""></input>
+      <label for="not-reported"> Not Reported </label>
+      <input required type="number" ng-model=""></input>
+    </fieldset>
+    <fieldset>
+      <legend>Veteran Status</legend>
+      <label for="veterans"> Veterens: </label>
+      <input required type="number" ng-model=""></input>
+    </fieldset>
+    <fieldset>
+      <legend>Responsible for Dependants</legend>
+      <label for="dependants"> Dependants: </label>
+      <input required type="number" ng-model=""></input>
+    </fieldset>
+    <button class="btn btn-primary" type="submit"> Submit </button>
+  </form>
+</section>
