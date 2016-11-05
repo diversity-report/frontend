@@ -34,7 +34,7 @@ module.exports = {
   devtool: production ? false : 'eval',
   plugins: plugins,
   output: {
-    path: 'build',
+    path: 'public',
     filename: 'bundle.js'
   },
   sassLoader: {
