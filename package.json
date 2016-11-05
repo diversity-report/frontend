@@ -4,7 +4,7 @@
   "description": "app to help people find out about how diverse the companies are",
   "main": "cli-server.js",
   "scripts": {
-    "postinstall": "webpack --config ./webpack.config.js --progress --colors",
+    "postinstall": "webpack --progress --colors",
     "start": "node cli-server.js"
   },
   "repository": {
