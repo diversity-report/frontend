@@ -1,3 +1,11 @@
 'use strict';
-require('express')().use(require('express').static('public'))
-.listen(8080, () => {console.log('cli-server 8080 listening..');});
+
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 8080;
+
+app.use(express.static(`${__dirname}/build`));
+
+app.listen(port, function(){
+  console.log('server up on ' + port);
+});

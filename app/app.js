@@ -7,9 +7,12 @@ const app = angular.module('drApp', []);
 
 require('./controller/main_ctrl.js');
 
-// app.config(['$routeProvider', ($routeProvider) => {
-  // $routeProvider
-  // .when('/', {
-  //
-  // });
-// }]);
+app.config(['$routeProvider', ($routeProvider) => {
+  $routeProvider
+  .when('/', {
+    template: require('./html/index.html')
+  })
+  .otherwise({
+    redirectTo: '/'
+  });
+}]);
