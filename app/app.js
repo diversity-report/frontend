@@ -4,7 +4,7 @@ require('./scss/base.scss');
 
 const angular = require('angular');
 const ngRoute = require('angular-route');
-const app = angular.module('drApp', [ngRoute]);
+const app = angular.module('drApp', [ngRoute, 'chart.js']);
 
 require('./controller/main_ctrl.js')(app);
 
@@ -15,5 +15,11 @@ app.config(['$routeProvider', function($routeProvider){
   })
   .when('/contribute', {
     template: require('./templates/contribute.html')
+  })
+  .when('/search',{
+    template: require('./templates/search.html')
+  })
+  .otherwise({
+    redirectTo: '/'
   });
 }]);
