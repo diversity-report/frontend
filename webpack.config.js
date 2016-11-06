@@ -1,69 +1,59 @@
 'use strict';
-const webpack = require('webpack');
-const CleanPlugin = require('clean-webpack-plugin');
 
-const autoprefixer = require('autoprefixer');
+const webpack = require('webpack');
 const ExtractText = require('extract-text-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 const production = process.env.NODE_ENV === 'production';
-const apiUrl = process.env.API_URL || 'http://localhost:3000';
+const API_URL = JSON.stringify(process.env.API_URL || 'http://localhost:3000');
+// const DashboardPlugin = require('webpack-dashboard');
 
-var plugins = [
+let pluginsArray = [
   new ExtractText('bundle.css'),
   new webpack.DefinePlugin({
-    __API_URL__: JSON.stringify(apiUrl),
-    __DEBUG__: JSON.stringify(!production)
-  })
+    __API_URL__: API_URL,
+    __DEBUG__: JSON.stringify(!production),
+  }),
+  // new DashboardPlugin(),
 ];
-
-if (production){
-  plugins = plugins.concat([
-    new webpack.optimize.UglifyJsPlugin({
-      mangle: true,
-      compress: {
-        warnings: false
-      }
-    }),
-    new CleanPlugin()
-  ]);
-}
 
 module.exports = {
   entry: `${__dirname}/app/app.js`,
   debug: !production,
-  devtool: production ? false : 'eval',
-  plugins: plugins,
   output: {
     path: 'build',
     filename: 'bundle.js'
   },
-  sassLoader: {
-    includePaths: [`${__dirname}/app/scss/lib`]
-  },
+  devtool: 'inline-source-map',
+  plugins: pluginsArray,
   postcss: function(){
     return [autoprefixer];
+  },
+  sassLoader: {
+    includePaths: `${__dirname}/app/style/scss`
   },
   module: {
     loaders: [
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel',
-        query: {
-          presets: ['es2015']
-        }
-      },
-      {
         test: /\.scss$/,
         loader: ExtractText.extract('style', 'css!postcss!sass!')
+      },
+      {
+        test: /\.js$/,
+        loader: 'babel',
+        exclude: /node_modules/
       },
       {
         test: /\.html$/,
         loader: 'html'
       },
       {
-        test: /\.(jpg|gif|png|jpeg)$/,
-        loader: 'file?name=img/[hash].[ext]'
+        test: /\.(jpg|jpgeg|gif|png)$/,
+        loader: 'file?name=img/[hash]-[name].[ext]'
+      },
+      {
+        test: /\.(woff|svg|eot|ttf).*/,
+        loader: 'url?limit=10000&name=font/[name].[ext]'
       }
     ]
   }
