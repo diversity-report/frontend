@@ -4,7 +4,7 @@ require('./scss/base.scss');
 
 const angular = require('angular');
 const ngRoute = require('angular-route');
-const app = angular.module('drApp', [ngRoute]);
+const app = angular.module('drApp', [ngRoute, 'chart.js']);
 
 require('./controller/main_ctrl.js')(app);
 
