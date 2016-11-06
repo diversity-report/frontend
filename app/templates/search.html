@@ -1,16 +1,11 @@
-<section>
+<section ng-controller="mainController as mainCtrl">
   <div class="searchForm">
-    <section>
-      <select id="city-select">
-        <option value="{{data.city}}" id='city-option'>Select a City</option>
-      </select>
-      <select id="company-select">
-        <option value="{{data.companyName}}" id='company-option'>Select a company</option>
-      </select>
-    </section>
+    City: <input ng-model="information.city"/>
+    Company Name: <input ng-model="information.companyName"/>
   </div>
-  <div class="searchResult">
-    <h1>{{data.companyName}}</h1>
-    <p>{{data.numOfEmployees}} works for this company.</p>
+  <div class="searchResult" ng-repeat="info in information | filter:{city: information.city, companyName: information.companyName}">
+    <h1>{{info.companyName}}</h1>
+    <p>{{info.numOfEmployees}} works for this company.</p>
   </div>
+  
 </section>
