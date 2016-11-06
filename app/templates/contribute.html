@@ -1,56 +1,58 @@
-<section class="container">
+<section class="form-container" ng-controller="mainController as mainCtrl">
   <h1>Demographics Form</h1>
   <p>Please input your company's demographic information.</p>
-  <form class="form" ng-submit="" ng-model="">
+  <form class="form" action="index.html" method="post" name="posting">
     <fieldset>
       <legend>Company Information</legend>
       <label for="companyName"> Company Name: </label>
-      <input required type="text" ng-model=""></input>
+      <input name="posting" required type="text" ng-model="newCompany.companyName"></input>
       <label for="city"> City: </label>
-      <input required type="text" ng-model=""></input>
+      <input name="posting" required type="text" ng-model="newCompany.city"></input>
       <label for="state"> State: </label>
-      <input required type="text" ng-model=""></input>
+      <input name="posting" required type="text" ng-model="newCompany.state"></input>
+      <label for="state"> Total Number of Employees: </label>
+      <input name="posting" required type="text" ng-model="newCompany.totalEmployees" placeholder="type number"></input>
     </fieldset>
     <fieldset>
       <legend>Race</legend>
       <label for="white"> White/Caucasian: </label>
-      <input required type="number" ng-mod`el=""></input>
+      <input name="posting" required type="number" ng-model="newCompany.white" placeholder="type number"></input>
       <label for="hawaiian"> Native Hawaiian/Pacific Islander: </label>
-      <input required type="number" ng-model=""></input>
+      <input name="posting" required type="number" ng-model="newCompany.hawaiian" placeholder="type number"></input>
       <label for="nativeAmerican"> Native American/Alaska Native: </label>
-      <input required type="number" ng-model=""></input>
+      <input name="posting" required type="number" ng-model="newCompany.nativeAmerican" placeholder="type number"></input>
       <label for="asian"> Asian/Pacific Islander: </label>
-      <input required type="number" ng-model=""></input>
+      <input name="posting" required type="number" ng-model="newCompany.asian" placeholder="type number"></input>
       <label for="arab"> Arab/Middle Eastern: </label>
-      <input required type="number" ng-model=""></input>
+      <input name="posting" required type="number" ng-model="newCompany.arab" placeholder="type number"></input>
       <label for="latino"> Latino/Hispanic: </label>
-      <input required type="number" ng-model=""></input>
+      <input name="posting" required type="number" ng-model="newCompany.latino" placeholder="type number"></input>
       <label for="black"> Black/African American: </label>
-      <input required type="number" ng-model=""></input>
+      <input name="posting" required type="number" ng-model="newCompany.black" placeholder="type number"></input>
       <label for="not-reported"> Not Reported: </label>
-      <input required type="number" ng-model=""></input>
+      <input name="posting" required type="number" ng-model="newCompany.notReportedRace" placeholder="type number"></input>
     </fieldset>
     <fieldset>
       <legend>Gender Identity</legend>
       <label for="female"> Female: </label>
-      <input required type="number" ng-model=""></input>
+      <input name="posting" required type="number" ng-model="newCompany.female" placeholder="type number"></input>
       <label for="male"> Male: </label>
-      <input required type="number" ng-model=""></input>
+      <input name="posting" required type="number" ng-model="newCompany.male" placeholder="type number"></input>
       <label for="non-binary"> Non-Binary: </label>
-      <input required type="number" ng-model=""></input>
+      <input name="posting" required type="number" ng-model="newCompany.noninary" placeholder="type number"></input>
       <label for="not-reported"> Not Reported </label>
-      <input required type="number" ng-model=""></input>
+      <input name="posting" required type="number" ng-model="newCompany.notReportedGender" placeholder="type number"></input>
     </fieldset>
     <fieldset>
       <legend>Veteran Status</legend>
       <label for="veterans"> Veterens: </label>
-      <input required type="number" ng-model=""></input>
+      <input name="posting" required type="number" ng-model="newCompany.veterans" placeholder="type number"></input>
     </fieldset>
     <fieldset>
       <legend>Responsible for Dependants</legend>
       <label for="dependants"> Dependants: </label>
-      <input required type="number" ng-model=""></input>
+      <input name="posting" required type="number" ng-model="newCompany.dependants" placeholder="type number"></input>
     </fieldset>
-    <button class="btn btn-primary" type="submit"> Submit </button>
+    <input class="form-button" name="posting" ng-click="mainCtrl.createCompany(newCompany)" type="button" value="Submit"/>
   </form>
 </section>

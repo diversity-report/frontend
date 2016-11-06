@@ -2,26 +2,14 @@
 <html ng-app="drApp">
   <head>
     <meta charset="utf-8">
-    <script type="text/javascript" src="bundle.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="bundle.css">
+    <script type="text/javascript" src="bundle.js"></script>
     <title>Diversity-Report</title>
   </head>
-  <body ng-controller="mainController as mainCtrl">
-    <h1>Gender</h1>
-    <canvas id="doughnut" class="chart chart-doughnut"
-      chart-data="genderData" chart-labels="genderLabels">
-    </canvas>
-    <h1>Race</h1>
-    <canvas id="doughnut" class="chart chart-doughnut"
-      chart-data="raceData" chart-labels="raceLabels">
-    </canvas>
-    <h1>Veteran Status</h1>
-    <canvas id="doughnut" class="chart chart-doughnut"
-      chart-data="veteransData" chart-labels="veteransLabels">
-    </canvas>
-    <h1>Responsible for Dependants</h1>
-    <canvas id="doughnut" class="chart chart-doughnut"
-      chart-data="dependantsData" chart-labels="dependantsLabels">
-    </canvas>
+  <body ng-view>
   </body>
+
 </html>
