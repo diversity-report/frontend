@@ -1,19 +1,17 @@
 'use strict';
-
 require('angular-chart.js');
+
 // const _ = require('lodash');
-module.exports = (app) => {
-  app.controller('mainController', ['$http','$scope', function($http,$scope){
+module.exports = function (app){
+  console.log('hitting');
+  app.controller('mainController', ['$http','$scope', function($http, $scope){
+    console.log('hitting in controller');
+
     $scope.information = {};
     $scope.newCompany = {};
-    // $scope.searchSubmit = function(){
-    //   var data = $.param({
-    //     json: JSON.stringify({
-    //
-    //     })
-    //   })
-    // }
     var dataUrl = `${__API_URL__}/api/company`;
+    var url = `${__API_URL__}/api/company/581f7b95011ac11dd8b8c19b`;
+
     $http.get(dataUrl)
     .success(function(data) {
       $scope.bigData = data;
@@ -25,20 +23,12 @@ module.exports = (app) => {
         $scope.unfilteredData = $scope.unfilteredData || $scope.bigData;
         $scope.bigData = $scope.unfilteredData.filter((item)=>{
           return item.city.includes(`${companyName}`);
-        })
+        });
       };
     });
 
-
-    // $scope.getOneCompany = function(companyId){
-    // var url = `${__API_URL__}/api/company/${companyId}`;
-    var url = `${__API_URL__}/api/company/581e6b0fe30adb51f67eab67`;
     $http.get(url)
     .success(function(data) {
-      // $scope.searchSubmit = function(data){
-      //
-      // };
-
       $scope.information = data;
       console.log('Company Data Object: ',data);
       let genderLabels = ['Not Reported', 'Non-Binary', 'Male', 'Female'];
@@ -69,26 +59,40 @@ module.exports = (app) => {
       $scope.dependantsLabels = dependantsLabels;
       $scope.info =[];
     })
-      .error(function(data) {
+    .error(function(data) {
+      console.log('Error: ' + data);
+    });
+
+    $scope.createCompany = (userInput) => {
+      console.log(userInput);
+      let url = `${__API_URL__}/api/company/newCompany`;
+      let matchSchema = {
+        companyName: userInput.companyName,
+        city: userInput.city,
+        state: userInput.state,
+        numOfEmployees: userInput.numOfEmployees,
+        gender: { female: userInput.female, male: userInput.male, nonbinary: userInput.nonbinary, unreportedGender: userInput.unreportedGender},
+        race: {  arabMiddleEastern: userInput.arab,
+          latinoHispanic: userInput.latino,
+          blackAfricanAmerican: userInput.black,
+          asianPacificIslander: userInput.asian,
+          nativeAmericanAlaskanNative: userInput.nativeAmerican,
+          nativeHawaiianPacificIslander: userInput.hawaiian,
+          whiteCaucasian: userInput.white,
+          unreportedRace: userInput.unreportedRace
+        },
+        veteran: userInput.veteran,
+        dependants: userInput.dependants
+      };
+      console.log('postObj', matchSchema);
+      $http.post(url, matchSchema).success((data) => {
+        console.log('posting', data);
+        // $scope.newCompany = data; // clear the form so our user is ready to enter another
+        // $scope.data = data;
+      })
+      .error((data) => {
         console.log('Error: ' + data);
       });
-
-  // };
-  // $scope.createCompany = function() {
-  //   var url = `${__API_URL__}/api/newCompany/`;
-  //   $http.post(url)
-  //     .success(function($scope.newCompany) {
-  //       $scope.newCompany = data; // clear the form so our user is ready to enter another
-  //       $scope.data = data;
-  //       console.log('%%%%%%%%%%',data);
-  //     })
-  //     .error(function(data) {
-  //       console.log('Error: ' + data);
-  //     });
-  // };
-
-    $scope.createCompany = function(data){//delete
-      console.log('data', data );
     };
-  }]);
-};
+  }]);//end of controller
+};//end of module.exports

@@ -1,33 +1,113 @@
+@import "./vendor/bootstrap/stylesheets/_bootstrap";
+
 $colorWhite: #fafaff;
 $colorLime: #bada55;
 $colorCharcoal: #333333;
 
-body {
-  background-image: url('./images/header.jpg');
+.home-container {
+  background-image: url('./images/people.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 700px;
+  margin: 0;
+  padding-top: 100px;
 }
-
-
-
 
 /*--------------------- graph page css ----------------------*/
-.graph-section {
-  background-color: $colorWhite ;
+.graph-section h1{
+  color: black;
+  text-align: center;
 }
 
+.chart {
+  max-width: 400px;
+  max-height: 400px;
+  margin: 0 auto;
+}
+
+.chart-section {
+  display: inline-block;
+  width: 450px;
+  margin: 0 auto;
+}
 
 
 
 /*--------------------- form page css ----------------------*/
 
 .form-container {
-  background-color: $colorWhite ;
   position: relative;
   height: 100%;
   border-radius: 1%;
   box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
 }
+
 .form-button {
   width: 25%;
   font-size: larger;
   margin: 4px auto;
+}
+
+.navbar-default {
+  margin: 0;
+}
+.main-page {
+  padding: 15px;
+  width: 90%;
+  text-align: center;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid black;
+  h1 {
+    padding: 0;
+    margin: 0;
+  }
+}
+.home-h1 {
+  font-size: 35px
+}
+
+.home-p{
+  font-size: 15px;
+}
+
+.blurb {
+  padding-top: 5px;
+  font-size: 12px;
+}
+
+.logo {
+  width: 80px;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+@media (min-width: 600px) {
+  .main-page {
+    padding: 30px;
+    width: 600px;
+    text-align: center;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px solid black;
+    h1 {
+      padding: 0;
+      margin: 0;
+    }
+  }
+  .home-h1 {
+    font-size: 60px
+  }
+
+  .home-p{
+    font-size: 25px;
+  }
+
+  .blurb {
+    padding-top: 10px;
+    font-size: 15px;
+  }
 }

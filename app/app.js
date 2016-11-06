@@ -5,8 +5,10 @@ require('./scss/base.scss');
 const angular = require('angular');
 const ngRoute = require('angular-route');
 const app = angular.module('drApp', [ngRoute, 'chart.js']);
+// const app = angular.module('drApp', [ngRoute]);
 
 require('./controller/main_ctrl.js')(app);
+
 
 app.config(['$routeProvider', function($routeProvider){
   $routeProvider
@@ -18,8 +20,5 @@ app.config(['$routeProvider', function($routeProvider){
   })
   .when('/search',{
     template: require('./templates/search.html')
-  })
-  .otherwise({
-    redirectTo: '/'
   });
 }]);
