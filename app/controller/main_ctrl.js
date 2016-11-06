@@ -8,7 +8,7 @@ module.exports = (app) => {
     $scope.newCompany = {};
   // this.getOneCompany = function(companyId){
     // var url = `${__API_URL__}/api/company/${companyId}`;
-    var url = `${__API_URL__}/api/company/581e919c494df73b47bce3f2`;
+    var url = `${__API_URL__}/api/company/581ed2d6c4f9a120feec0015`;
     $http.get(url)
     .success(function(data) {
       $scope.information = data;
@@ -58,6 +58,10 @@ module.exports = (app) => {
   //       console.log('Error: ' + data);
   //     });
   // };
+
+    $scope.createCompany = function(data){//delete
+      console.log('data', data );
+    };
 
   }]);
 };

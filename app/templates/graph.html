@@ -1,5 +1,18 @@
-<canvas id="doughnut" class="chart chart-doughnut"
-  chart-data="data" chart-labels="labels">
-</canvas>
-<script src="node_modules/chart.js/Chart.min.js"></script>
-<script src="node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
+<section class="graph-section" ng-controller="mainController as mainCtrl">
+  <h1>Gender</h1>
+  <canvas id="doughnut" class="chart chart-doughnut"
+    chart-data="genderData" chart-labels="genderLabels">
+  </canvas>
+  <h1>Race</h1>
+  <canvas id="doughnut" class="chart chart-doughnut"
+    chart-data="raceData" chart-labels="raceLabels">
+  </canvas>
+  <h1>Veteran Status</h1>
+  <canvas id="doughnut" class="chart chart-doughnut"
+    chart-data="veteransData" chart-labels="veteransLabels">
+  </canvas>
+  <h1>Responsible for Dependants</h1>
+  <canvas id="doughnut" class="chart chart-doughnut"
+    chart-data="dependantsData" chart-labels="dependantsLabels">
+  </canvas>
+</section>
