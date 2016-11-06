@@ -3,7 +3,7 @@ require('angular-chart.js');
 
 module.exports = function (app){
   console.log('hitting');
-  app.controller('mainController', ['$http','$scope', function($http, $scope){
+  app.controller('mainController', ['$http','$scope','$location','$window', function($http, $scope, $location, $window){
     console.log('hitting in controller');
 
     $scope.information = {};
@@ -73,8 +73,8 @@ module.exports = function (app){
       console.log('postObj', matchSchema);
       $http.post(url, matchSchema).success((data) => {
         console.log('posting', data);
-        // $scope.newCompany = data; // clear the form so our user is ready to enter another
-        // $scope.data = data;
+        $window.alert('Thank you for contributing!');
+        $location.path('/search');
       })
       .error((data) => {
         console.log('Error: ' + data);

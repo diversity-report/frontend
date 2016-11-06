@@ -10,7 +10,7 @@ const app = angular.module('drApp', [ngRoute, 'chart.js']);
 require('./controller/main_ctrl.js')(app);
 
 
-app.config(['$routeProvider', function($routeProvider){
+app.config(['$locationProvider', '$routeProvider', function($locationProvider,$routeProvider){
   $routeProvider
   .when('/', {
     template: require('./templates/home.html')
