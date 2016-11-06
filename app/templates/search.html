@@ -1,16 +1,44 @@
-<section>
+<section ng-controller="mainController as mainCtrl">
   <div class="searchForm">
-    <section>
-      <select id="city-select">
-        <option value="{{data.city}}" id='city-option'>Select a City</option>
-      </select>
-      <select id="company-select">
-        <option value="{{data.companyName}}" id='company-option'>Select a company</option>
-      </select>
-    </section>
+    City: <input ng-model="information.city"/>
+    Company Name: <input ng-model="information.companyName"/>
   </div>
-  <div class="searchResult">
-    <h1>{{data.companyName}}</h1>
-    <p>{{data.numOfEmployees}} works for this company.</p>
+  <div class="searchResult" ng-repeat="info in information | filter:{city: information.city, companyName: information.companyName}">
+    <h1>{{info.companyName}}</h1>
+    <p>{{info.numOfEmployees}} works for this company.</p>
   </div>
+
 </section>
+
+
+<div ng-controller="mainController as mainCtrl">
+  <section>
+    <div class="searchForm">
+      City: <input ng-model="information.city"/>
+      Company Name: <input ng-model="information.companyName"/>
+      <button type="submit" ng-click="">Search</button>
+    </div>
+    <div class="searchResult" ng-repeat="info in information | filter:{city: information.city, companyName: information.companyName}">
+      <h1>{{info.companyName}}</h1>
+      <p>{{info.numOfEmployees}} works for this company.</p>
+    </div>
+  </section>
+  <section class="graph-section">
+    <h1>Gender</h1>
+    <canvas id="doughnut" class="chart chart-doughnut"
+      chart-data="genderData" chart-labels="genderLabels">
+    </canvas>
+    <h1>Race</h1>
+    <canvas id="doughnut" class="chart chart-doughnut"
+      chart-data="raceData" chart-labels="raceLabels">
+    </canvas>
+    <h1>Veteran Status</h1>
+    <canvas id="doughnut" class="chart chart-doughnut"
+      chart-data="veteransData" chart-labels="veteransLabels">
+    </canvas>
+    <h1>Responsible for Dependants</h1>
+    <canvas id="doughnut" class="chart chart-doughnut"
+      chart-data="dependantsData" chart-labels="dependantsLabels">
+    </canvas>
+  </section>
+</div>
