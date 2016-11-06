@@ -8,7 +8,7 @@ module.exports = (app) => {
     $scope.newCompany = {};
   // this.getOneCompany = function(companyId){
     // var url = `${__API_URL__}/api/company/${companyId}`;
-    var url = `${__API_URL__}/api/company/581ed2d6c4f9a120feec0015`;
+    var url = `${__API_URL__}/api/company/581f41b86b9cf347580994b1`;
     $http.get(url)
     .success(function(data) {
       $scope.information = data;
@@ -28,17 +28,17 @@ module.exports = (app) => {
       console.log('Race Labels: ' + raceLabels + ', Race Data: ' + raceData);
       console.log('Veteran Labels: ' + veteransLabels + ', Veteran Data: ' + veteranData);
       console.log('Dependant Labels: ' + dependantsLabels + ', Dependant Data: ' + dependantsData);
-      $scope.genderData = [5,2,3,7];
-      // $scope.genderData = genderData;
+      // $scope.genderData = [5,2,3,7];
+      $scope.genderData = genderData;
       $scope.genderLabels = genderLabels;
-      $scope.raceData = [5,2,3,7,4,6,1,9];
-      // $scope.raceData = raceData;
+      // $scope.raceData = [5,2,3,7,4,6,1,9];
+      $scope.raceData = raceData;
       $scope.raceLabels = raceLabels;
-      $scope.veteransData = [5,2];
-      // $scope.veteranData = veteranData;
+      // $scope.veteransData = [5,2];
+      $scope.veteranData = veteranData;
       $scope.veteransLabels = veteransLabels;
-      $scope.dependantsData = [5,2];
-      // $scope.dependantsData = dependantsData;
+      // $scope.dependantsData = [5,2];
+      $scope.dependantsData = dependantsData;
       $scope.dependantsLabels = dependantsLabels;
     })
       .error(function(data) {

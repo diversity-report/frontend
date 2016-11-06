@@ -11,19 +11,13 @@ require('./controller/main_ctrl.js')(app);
 app.config(['$routeProvider', function($routeProvider){
   $routeProvider
   .when('/', {
-    template: require('./html/index.html')
+    template: require('./templates/home.html')
   })
   .when('/contribute', {
     template: require('./templates/contribute.html')
   })
   .when('/search',{
     template: require('./templates/search.html')
-  })
-  .when('/graph', {
-    template: require('./templates/graph.html')
-  })
-  .when('/home', {
-    template: require('./templates/home.html')
   })
   .otherwise({
     redirectTo: '/'
