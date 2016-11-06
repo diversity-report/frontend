@@ -5,8 +5,9 @@ const app = angular.module('drApp', []);
 require('./controller/main_ctrl.js');
 
 app.config(['$routeProvider', ($routeProvider) => {
-  // $routeProvider
-  // .when('/', {
-  //
-  // });
+  $routeProvider
+  .when('/', {
+    template: require('./templates/search.html'),
+    controller: 'mainController'
+  });
 }]);
