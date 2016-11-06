@@ -3,7 +3,6 @@ require('angular-chart.js');
 
 // const _ = require('lodash');
 module.exports = function (app){
-  console.log('hitting');
   app.controller('mainController', ['$http','$scope', function($http, $scope){
     console.log('hitting in controller');
 
