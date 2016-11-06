@@ -4,48 +4,59 @@ $colorWhite: #fafaff;
 $colorLime: #bada55;
 $colorCharcoal: #333333;
 
-html {
+.home-container {
   background-image: url('./images/people.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  height: 700px;
+  margin: 0;
+  padding-top: 100px;
 }
-
-body {
-  background-color: inherit;
-}
-
-
-
 
 /*--------------------- graph page css ----------------------*/
-.graph-section {
-  background-color: $colorWhite ;
+.graph-section h1{
+  color: black;
+  text-align: center;
 }
 
+.chart {
+  max-width: 400px;
+  max-height: 400px;
+  margin: 0 auto;
+}
+
+.chart-section {
+  display: inline-block;
+  width: 450px;
+  margin: 0 auto;
+}
 
 
 
 /*--------------------- form page css ----------------------*/
 
 .form-container {
-  background-color: $colorWhite ;
   position: relative;
   height: 100%;
   border-radius: 1%;
   box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
 }
+
 .form-button {
   width: 25%;
   font-size: larger;
   margin: 4px auto;
 }
 
+.navbar-default {
+  margin: 0;
+}
 .main-page {
   padding: 15px;
   width: 90%;
   text-align: center;
-  margin: 100px auto 0 auto;
+  margin: 0 auto;
   background-color: rgba(255, 255, 255, 0.8);
   border: 2px solid black;
   h1 {
@@ -79,7 +90,7 @@ body {
     padding: 30px;
     width: 600px;
     text-align: center;
-    margin: 140px auto 0 auto;
+    margin: 0 auto;
     background-color: rgba(255, 255, 255, 0.8);
     border: 2px solid black;
     h1 {
