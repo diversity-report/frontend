@@ -1,0 +1,16 @@
+<section>
+  <div class="searchForm">
+    <section>
+      <select id="city-select">
+        <option value="{{data.city}}" id='city-option'>Select a City</option>
+      </select>
+      <select id="company-select">
+        <option value="{{data.companyName}}" id='company-option'>Select a company</option>
+      </select>
+    </section>
+  </div>
+  <div class="searchResult">
+    <h1>{{data.companyName}}</h1>
+    <p>{{data.numOfEmployees}} works for this company.</p>
+  </div>
+</section>

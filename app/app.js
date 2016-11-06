@@ -16,6 +16,9 @@ app.config(['$routeProvider', ($routeProvider) => {
   .when('/contribute', {
     template: require('./templates/contribute.html')
   })
+  .when('/search',{
+    template: require('./templates/search.html')
+  })
   .otherwise({
     redirectTo: '/'
   });

@@ -1,8 +1,6 @@
 'use strict';
-const angular = require('angular');
-require('angular-chart.js');
 
-// const app = angular.module('drApp', ['chart.js']);
+require('angular-chart.js');
 
 module.exports = (app) => {
   app.controller('mainController', ['$http','$scope', function($http,$scope){
@@ -46,6 +44,7 @@ module.exports = (app) => {
       .error(function(data) {
         console.log('Error: ' + data);
       });
+
   // };
   // $scope.createCompany = function() {
   //   var url = `${__API_URL__}/api/newCompany/`;
@@ -59,5 +58,6 @@ module.exports = (app) => {
   //       console.log('Error: ' + data);
   //     });
   // };
+
   }]);
 };
