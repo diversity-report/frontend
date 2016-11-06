@@ -5,25 +5,11 @@
     </div>
   </div>
 </nav>
-<section ng-controller="mainController as mainCtrl">
-  <div class="searchForm">
-    City: <input ng-model="information.city"/>
-    Company Name: <input ng-model="information.companyName"/>
-  </div>
-  <div class="searchResult" ng-repeat="info in information | filter:{city: information.city, companyName: information.companyName}">
-    <h1>{{info.companyName}}</h1>
-    <p>{{info.numOfEmployees}} works for this company.</p>
-  </div>
-
-</section>
-
-
-<div ng-controller="mainController as mainCtrl">
-  <section>
+<div ng-controller="mainController as mainCtrl" class="search-container">
+  <section class="search-section">
     <div class="searchForm">
       City: <input ng-model="information.city"/>
       Company Name: <input ng-model="information.companyName"/>
-      <button type="submit" ng-click="">Search</button>
     </div>
     <div class="searchResult" ng-repeat="info in information | filter:{city: information.city, companyName: information.companyName}">
       <h1>{{info.companyName}}</h1>
@@ -31,21 +17,28 @@
     </div>
   </section>
   <section class="graph-section">
-    <h1>Gender</h1>
-    <canvas id="doughnut" class="chart chart-doughnut"
-      chart-data="genderData" chart-labels="genderLabels">
-    </canvas>
-    <h1>Race</h1>
-    <canvas id="doughnut" class="chart chart-doughnut"
-      chart-data="raceData" chart-labels="raceLabels">
-    </canvas>
+    <div class="chart-section">
+      <h1>Gender</h1>
+      <canvas class="chart chart-doughnut"
+        chart-data="genderData" chart-labels="genderLabels">
+      </canvas>
+    </div>
+    <div class="chart-section">
+      <h1>Race</h1>
+      <canvas class="chart chart-doughnut"
+        chart-data="raceData" chart-labels="raceLabels">
+      </canvas>
+    </div>
+    <div class="chart-section">
     <h1>Veteran Status</h1>
-    <canvas id="doughnut" class="chart chart-doughnut"
-      chart-data="veteransData" chart-labels="veteransLabels">
-    </canvas>
-    <h1>Responsible for Dependants</h1>
-    <canvas id="doughnut" class="chart chart-doughnut"
-      chart-data="dependantsData" chart-labels="dependantsLabels">
-    </canvas>
+      <canvas class="chart chart-doughnut"
+        chart-data="veteransData" chart-labels="veteransLabels">
+      </canvas>
+    <div class="chart-section">
+      <h1>Responsible for Dependants</h1>
+      <canvas class="chart chart-doughnut"
+        chart-data="dependantsData" chart-labels="dependantsLabels">
+      </canvas>
+    </div>
   </section>
 </div>
