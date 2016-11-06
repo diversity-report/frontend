@@ -8,16 +8,19 @@
 </nav>
 <div ng-controller="mainController as mainCtrl" class="search-container">
   <section class="search-section">
-    <div class="searchForm">
-      City: <input ng-model="information.city"/>
-      Company Name: <input ng-model="information.companyName"/>
-    </div>
+    <form>
+      <div class="searchForm">
+        <!-- City: <input ng-model="information.city"/> -->
+        Company Name: <input ng-model="companyName"/>
+      </div>
+      <button ng-click="searchFilter()">Submit</button>
+    </form>
     <div class="searchResult" ng-repeat="info in information | filter:{city: information.city, companyName: information.companyName}">
       <h1>{{info.companyName}}</h1>
       <p>{{info.numOfEmployees}} works for this company.</p>
     </div>
   </section>
-  
+
   <section class="graph-section">
     <div class="chart-section">
       <h1>Gender</h1>
