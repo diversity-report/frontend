@@ -11,7 +11,7 @@ module.exports = function (app){
 
   // this.getOneCompany = function(companyId){
     // var url = `${__API_URL__}/api/company/${companyId}`;
-    var url = `${__API_URL__}/api/company/581f7b95011ac11dd8b8c19b`;
+    var url = `${__API_URL__}/api/company/581f41b86b9cf347580994b1`;
     $http.get(url)
     .success(function(data) {
       $scope.information = data;
@@ -38,7 +38,7 @@ module.exports = function (app){
       $scope.raceData = raceData;
       $scope.raceLabels = raceLabels;
       // $scope.veteransData = [5,2];
-      $scope.veteranData = veteranData;
+      $scope.veteransData = veteranData;
       $scope.veteransLabels = veteransLabels;
       // $scope.dependantsData = [5,2];
       $scope.dependantsData = dependantsData;
