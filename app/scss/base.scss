@@ -20,6 +20,10 @@ $colorCharcoal: #333333;
   text-align: center;
 }
 
+.graph-section {
+  text-align: center;
+}
+
 .chart {
   max-width: 400px;
   max-height: 400px;
@@ -30,6 +34,7 @@ $colorCharcoal: #333333;
   display: inline-block;
   width: 450px;
   margin: 0 auto;
+  vertical-align: top;
 }
 
 
@@ -38,9 +43,11 @@ $colorCharcoal: #333333;
 
 .form-container {
   position: relative;
+  width: 80%;
   height: 100%;
   border-radius: 1%;
   box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+  margin: 0 auto;
 }
 
 .form-button {
