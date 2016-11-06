@@ -11,7 +11,7 @@ module.exports = function (app){
 
   // this.getOneCompany = function(companyId){
     // var url = `${__API_URL__}/api/company/${companyId}`;
-    var url = `${__API_URL__}/api/company/581f90e3ad4e890011def0eb`;
+    var url = `${__API_URL__}/api/company/581f9236ad4e890011def0ec`;
     $http.get(url)
     .success(function(data) {
       $scope.information = data;
