@@ -1,4 +1,4 @@
-<section class="container" ng-controller="mainController as mainCtrl">
+<section class="form-container" ng-controller="mainController as mainCtrl">
   <h1>Demographics Form</h1>
   <p>Please input your company's demographic information.</p>
   <form class="form" action="index.html" method="post" name="posting">
@@ -53,6 +53,6 @@
       <label for="dependants"> Dependants: </label>
       <input name="posting" required type="number" ng-model="newCompany.dependants" placeholder="type number"></input>
     </fieldset>
-    <input name="posting" ng-click="mainCtrl.createCompany(newCompany)" type="button" value="Submit"/>
+    <input class="form-button" name="posting" ng-click="mainCtrl.createCompany(newCompany)" type="button" value="Submit"/>
   </form>
 </section>

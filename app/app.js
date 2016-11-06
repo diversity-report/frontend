@@ -19,6 +19,12 @@ app.config(['$routeProvider', function($routeProvider){
   .when('/search',{
     template: require('./templates/search.html')
   })
+  .when('/graph', {
+    template: require('./templates/graph.html')
+  })
+  .when('/home', {
+    template: require('./templates/home.html')
+  })
   .otherwise({
     redirectTo: '/'
   });
