@@ -7,9 +7,21 @@
     <title>Diversity-Report</title>
   </head>
   <body ng-controller="mainController as mainCtrl">
-    <!-- <h1 ng-model="mainCtrl">{{mainCtrl.}}</h1> -->
+    <h1>Gender</h1>
     <canvas id="doughnut" class="chart chart-doughnut"
-      chart-data="data" chart-labels="labels">
+      chart-data="genderData" chart-labels="genderLabels">
+    </canvas>
+    <h1>Race</h1>
+    <canvas id="doughnut" class="chart chart-doughnut"
+      chart-data="raceData" chart-labels="raceLabels">
+    </canvas>
+    <h1>Veteran Status</h1>
+    <canvas id="doughnut" class="chart chart-doughnut"
+      chart-data="veteransData" chart-labels="veteransLabels">
+    </canvas>
+    <h1>Responsible for Dependants</h1>
+    <canvas id="doughnut" class="chart chart-doughnut"
+      chart-data="dependantsData" chart-labels="dependantsLabels">
     </canvas>
   </body>
 </html>
